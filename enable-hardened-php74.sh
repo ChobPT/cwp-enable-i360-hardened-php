@@ -4,14 +4,14 @@
 # path, so Apache vhosts (and CWP vhost rebuilds) need no changes.
 #
 # Usage: enable-hardened-php74.sh [user] [url-to-check]
-#   enable-hardened-php74.sh spq https://www.spq.pt/
+#   enable-hardened-php74.sh username https://example.com/
 #
 # Undo with revert-hardened-php74.sh [user]
 set -euo pipefail
 
-U=${1:-spq}
+U=${1:-username}
 CHECK_URL=${2:-}
-[ "$U" = spq ] && [ -z "$CHECK_URL" ] && CHECK_URL=https://www.spq.pt/
+[ "$U" = username ] && [ -z "$CHECK_URL" ] && CHECK_URL=https://example.com/
 
 CWP=/opt/alt/php-fpm74/usr
 ALT=/opt/alt/php74
