@@ -4,8 +4,8 @@
 # path, so Apache vhosts (and CWP vhost rebuilds) need no changes.
 #
 # Usage: enable-hardened-php73.sh [user] [url-to-check]
-#   enable-hardened-php73.sh spq https://b-quimica.chemistry.pt/
-#   enable-hardened-php73.sh spf https://spf.pt/
+#   enable-hardened-php73.sh username https://example.com/
+#   enable-hardened-php73.sh username https://example.com/
 #
 # Unlike CWP's php-fpm74, CWP's php-fpm73 does load snuffleupagus (CWP PHP
 # Defender); the hardened build has no equivalent, so that layer is lost.
@@ -13,9 +13,9 @@
 # Undo with revert-hardened-php73.sh [user]
 set -euo pipefail
 
-U=${1:-spq}
+U=${1:-username}
 CHECK_URL=${2:-}
-[ "$U" = spq ] && [ -z "$CHECK_URL" ] && CHECK_URL=https://b-quimica.chemistry.pt/
+[ "$U" = username ] && [ -z "$CHECK_URL" ] && CHECK_URL=https://example.com/
 
 CWP=/opt/alt/php-fpm73/usr
 ALT=/opt/alt/php73
