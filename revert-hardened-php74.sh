@@ -7,7 +7,7 @@
 #          disable alt-php74-fpm
 set -euo pipefail
 
-U=spq
+U=username
 ALL=0
 for a in "$@"; do
     case "$a" in
